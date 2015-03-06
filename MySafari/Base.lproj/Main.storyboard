@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,29 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqR-D5-vit">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="534"/>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZqR-D5-vit">
+                                <rect key="frame" x="16" y="66" width="568" height="468"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="58" width="400" height="484"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="5Px-eY-pwF"/>
                                 </connections>
                             </webView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-7m-0Di">
-                                <rect key="frame" x="16" y="28" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="gPA-t3-CXP"/>
-                                </connections>
-                            </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xaw-2Y-njA">
-                                <rect key="frame" x="0.0" y="542" width="600" height="50"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xaw-2Y-njA">
+                                <rect key="frame" x="16" y="542" width="568" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ss5-Lb-Z0K">
                                         <rect key="frame" x="8" y="10" width="30" height="30"/>
                                         <state key="normal" title="&lt;">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                        </variation>
                                         <connections>
                                             <action selector="onBackButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6gR-wN-Exy"/>
                                         </connections>
@@ -49,27 +46,76 @@
                                         <state key="normal" title="&gt;">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="46" y="10" width="30" height="30"/>
+                                        </variation>
                                         <connections>
                                             <action selector="onForwardButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6jb-HR-4sd"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVq-wx-7ot">
+                                        <rect key="frame" x="84" y="10" width="33" height="30"/>
+                                        <state key="normal" title="Stop">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="84" y="10" width="33" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="stopButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Uvt-vP-GJs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZY9-gI-CAE">
+                                        <rect key="frame" x="125" y="10" width="49" height="30"/>
+                                        <state key="normal" title="Reload">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="125" y="10" width="49" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="reloadButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qX3-1X-Fdf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu9-92-SHr">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="182" y="10" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="newFeatures:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vA9-5y-svv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="iu9-92-SHr"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="550" width="400" height="50"/>
+                                    <mask key="subviews">
+                                        <include reference="iu9-92-SHr"/>
+                                    </mask>
+                                </variation>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-7m-0Di">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="30"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="gPA-t3-CXP"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ZqR-D5-vit" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Aa2-QC-wrx"/>
-                            <constraint firstItem="Xaw-2Y-njA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="KKj-FK-sQw"/>
-                            <constraint firstItem="Xaw-2Y-njA" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="-16" id="KM9-c0-YUG"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Xaw-2Y-njA" secondAttribute="bottom" constant="8" id="Nce-WD-NAk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="g2F-7m-0Di" secondAttribute="trailing" id="WTf-PM-3bt"/>
-                            <constraint firstItem="g2F-7m-0Di" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Y1a-s7-LhM"/>
-                            <constraint firstItem="g2F-7m-0Di" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="aFq-Ft-0Dn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZqR-D5-vit" secondAttribute="trailing" constant="-16" id="auB-1I-ppM"/>
-                            <constraint firstItem="ZqR-D5-vit" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="tal-Rp-dbg"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZqR-D5-vit" secondAttribute="bottom" constant="66" id="wGt-XQ-ODv"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="urlTextField" destination="g2F-7m-0Di" id="byR-Le-hI9"/>
@@ -78,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418" y="289"/>
+            <point key="canvasLocation" x="417" y="289"/>
         </scene>
     </scenes>
 </document>

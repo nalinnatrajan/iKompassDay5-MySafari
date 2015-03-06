@@ -18,6 +18,12 @@
 
 - (IBAction)onForwardButtonPressed:(id)sender;
 
+- (IBAction)stopButtonPressed:(id)sender;
+
+- (IBAction)reloadButtonPressed:(id)sender;
+
+- (IBAction)newFeatures:(id)sender;
+
 @end
 
 @implementation ViewController
@@ -66,6 +72,24 @@
     
     [self.webView goForward];
 
+}
+
+- (IBAction)stopButtonPressed:(id)sender {
+    
+    [self.webView stopLoading];
+    
+}
+
+- (IBAction)reloadButtonPressed:(id)sender {
+    
+    [self.webView reload];
+    
+}
+
+- (IBAction)newFeatures:(id)sender {
+    
+    [UIAlertController alertControllerWithTitle:@"Coming Soon!" message:@"New features coming soon" preferredStyle:UIAlertControllerStyleAlert];
+    
 }
 
 @end
